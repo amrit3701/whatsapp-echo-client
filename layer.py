@@ -29,14 +29,13 @@ from yowsup.common.tools                               import Jid               
 #print "Hello world !" # this is should be saved in yourlogfilename.txt
 #------------#------------#------------#------------#------------#------------
 
-allowedPersons=['917355887432', '918567075678', '919501023463', '919988771252', '919780647372'] #Filter the senders numbers
+allowedPersons=['91xxxxxxxxxx', '91xxxxxxxxxx'] #Filter the senders numbers
 ap = set(allowedPersons)
 
 name = "NAMEPRESENCE"
 filelog = "/root/.yowsup/Not allowed.log"
 
 class EchoLayer(YowInterfaceLayer):
-    #def __init__(self):
 
     @ProtocolEntityCallback("message")
     def onMessage(self, messageProtocolEntity):
@@ -59,9 +58,9 @@ class EchoLayer(YowInterfaceLayer):
         namemitt   = messageProtocolEntity.getNotify()
         message    = messageProtocolEntity.getBody().lower()
         recipient  = messageProtocolEntity.getFrom()
-	print "recipient: ", recipient
-	print "type recipient: ", type(recipient)
-        print "message: ", message
+	#print "recipient: ", recipient
+	#print "type recipient: ", type(recipient)
+        #print "message: ", message
         textmsg    = TextMessageProtocolEntity
 
         #For a break to use the character \n
